@@ -3,4 +3,4 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - 2.3: Aufgabe-2.3.md
+  - Aufgabe 2.3: Aufgabe-2.3.md
