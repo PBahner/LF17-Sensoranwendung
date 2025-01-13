@@ -3,5 +3,9 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - Aufgabe 2.1: Aufgabe-2.1.md
-  - Aufgabe 2.3: Aufgabe-2.3.md
+  - Aufgabe Softwareprototyp: aufgabe-2.1.md
+  - Aufgabe Abstrakte Klassen: aufgabe-2.3.md
+  - Wdh. Klassenbeziehungen: klassenbeziehungen.md
+  - Wdh. MVC: mvc.md
+  - Wdh. IT-Sicherheit: it-sicherheit.md
+  - Wdh. Datenschutz: datenschutz.md
