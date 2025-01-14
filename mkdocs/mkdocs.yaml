@@ -3,14 +3,15 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - Aufgabe Softwareprototyp: aufgabe-2.1.md
-  - Aufgabe Abstrakte Klassen: aufgabe-2.3.md
-  - Aufgaben Klassenbeziehungen: klassenbeziehungen-aufgaben.md
-  - Aufgaben Klassenbeziehungen Lösungen: klassenbeziehungen-aufgaben-loesung.md
   - Wdh. Klassenbeziehungen: klassenbeziehungen.md
   - Wdh. MVC: mvc.md
   - Wdh. IT-Sicherheit: it-sicherheit.md
   - Wdh. Datenschutz: datenschutz.md
+  - Aufgaben:
+    - Softwareprototyp: aufgabe-2.1.md
+    - Abstrakte Klassen: aufgabe-2.3.md
+    - Klassenbeziehungen: klassenbeziehungen-aufgaben.md
+    - Klassenbeziehungen Lösungen: klassenbeziehungen-aufgaben-loesung.md
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
