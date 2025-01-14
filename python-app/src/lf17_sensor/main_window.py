@@ -1,19 +1,17 @@
 from PySide6.QtWidgets import *
-from PySide6 import QtCore
-from PySide6.QtGui import QIcon
 from typing import List
-from main_controller import MemController
-from component import *
+from .main_controller import MemController
+from .component import *
 import datetime
 
 
 class Display(QWidget):
-    __actors: List
-    __sensors: List
+    __actors: List[Actor]
+    __sensors: List[Sensor]
     # __main_layout_vertical: QVBoxLayout
     __test_button: QPushButton
 
-    def __init__(self, controller: MemController):
+    def __init__(self, controller: MemController) -> None:
         super().__init__()
         self.__test_button = QPushButton("Test me")
 
@@ -21,11 +19,10 @@ class Display(QWidget):
         vertical_layout.addWidget(self.generate_table(controller.get_components()))
         self.setLayout(vertical_layout)
 
-
-    def add_sensor(self, sensor: Sensor):
+    def add_sensor(self, sensor: Sensor) -> None:
         self.__sensors.append(sensor)
 
-    def add_actor(self, actor: Actor):
+    def add_actor(self, actor: Actor) -> None:
         self.__actors.append(actor)
 
     # def get_sensors(self, id):
@@ -51,8 +48,16 @@ class Display(QWidget):
             if isinstance(component, Actor):
                 table.setItem(row, 1, QTableWidgetItem(str(component.get_status())))
             elif isinstance(component, Sensor):
-                table.setItem(row, 1, QTableWidgetItem(str(component.get_temperature())))
-            table.setItem(row, 2, QTableWidgetItem(str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))))
+                table.setItem(
+                    row, 1, QTableWidgetItem(str(component.get_temperature()))
+                )
+            table.setItem(
+                row,
+                2,
+                QTableWidgetItem(
+                    str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                ),
+            )
             table.resizeColumnToContents(2)
 
         return table

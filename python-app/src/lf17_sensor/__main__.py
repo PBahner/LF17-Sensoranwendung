@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QApplication
-from main_window import Display
-from main_controller import MemController
-from component import *
+from .main_window import Display
+from .main_controller import MemController
+from .component import *
 
 
 def main() -> None:
@@ -9,7 +9,7 @@ def main() -> None:
     sensor1 = Sensor("Sensor1", True, 21.0)
     actor0 = Actor("Actor0", True, True)
 
-    components = [sensor0, sensor1, actor0]
+    components = sensor0, sensor1, actor0
 
     app = QApplication()
     controller = MemController(components)
