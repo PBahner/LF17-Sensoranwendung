@@ -1,7 +1,11 @@
 # Klassenbeziehungen
 
 ## Assoziation
-Eine Assoziation ist eine Verbindung zwischen zwei Objekten von zwei Klassen.
+Eine **Assoziation** beschreibt eine Verbindung zwischen zwei Objekten unterschiedlicher Klassen. Diese Beziehung
+impliziert keine Ownership, sondern lediglich eine Verknüpfung, die das Interagieren von Objekten ermöglicht.
+
+Im folgenden Beispiel hat der `MemController` Zugriff auf ein oder kein `Component`-Objekt. Die Methode `set_connected`
+im `MemController` sorgt dafür, dass dieser mit dem `Component`-Objekt kommuniziert.
 
 ```mermaid
 classDiagram
@@ -20,9 +24,7 @@ classDiagram
     }
 ```
 
-In diesem Beispiel hat der MemController Zugriff auf ein oder kein `Component`.
-Die `set_connected`-Methode im `MemController` sorgt dafür das dieser mit dem `Component` kommuniziert.
-
+### Beispiel in Python:
 ```python
 from typing import Optional
 
@@ -53,11 +55,16 @@ class MemController:
             self.__component.set_connected(connected)
 ```
 
-Über die `set_component`-Methode kann eine Referenz zu einem `Component`-Objekt gesetzt oder gelöscht werden.
+In diesem Fall kann der `MemController` über die Methode `set_component` eine Referenz zu einem `Component`-Objekt
+setzen oder löschen. Die Methode `set_connected` ermöglicht die Steuerung der Verbindung des `Component`-Objekts.
 
 ## Aggregation
-Bei einer Aggregation kann ein Objekt einer Klasse eine Verbindung zu mehreren Objekten einer anderen Klasse unterhalten.
-In dem unteren Beispiel kann ein `MemController`-Objekt den Verbindungsstatus mehrerer `Component`-Objekte steuern.
+Eine **Aggregation** stellt eine "Teil-Ganzes"-Beziehung dar, bei der ein Objekt eine Sammlung von Objekten einer
+anderen Klasse verwaltet. Im Gegensatz zur Komposition existieren die enthaltenen Objekte unabhängig von der
+aggregierenden Klasse.
+
+Im folgenden Beispiel kann ein `MemController`-Objekt mehrere `Component`-Objekte verwalten und deren Verbindungsstatus
+steuern.
 
 ```mermaid
 classDiagram
@@ -76,9 +83,7 @@ classDiagram
     }
 ```
 
-In diesem Beispiel kann nun dem `MemController`-Objekt `Component`-Objekte hinzugefügt werden. Diese Referenzen
-hält dieser dann in einer Liste.
-
+### Beispiel in Python:
 ```python
 from typing import List
 
@@ -109,10 +114,12 @@ class MemController:
             component.set_connected(connected)
 ```
 
+Hier wird dem `MemController`-Objekt ermöglicht, eine Liste von `Component`-Objekten zu verwalten. Die Methode `set_connected` wird auf jedes `Component`-Objekt angewendet, das dem `MemController` hinzugefügt wurde.
 
 ## Komposition
-Eine Komposition besteht dann, wenn die Existenz zweier Objekte voneinander abhängt. Dies ist dann von Vorteil,
-wenn die Funktionalität einer Klasse erweitert werden soll.
+Eine **Komposition** stellt eine starke "Teil-Ganzes"-Beziehung dar, bei der die Existenz eines Objekts ohne das andere nicht möglich ist. Im Gegensatz zur Aggregation kann das enthaltene Objekt nicht unabhängig existieren.
+
+Im folgenden Beispiel hat der `MemController` ein `Component`-Objekt, dessen Lebenszyklus direkt vom `MemController` abhängt.
 
 ```mermaid
 classDiagram
@@ -131,12 +138,7 @@ classDiagram
     }
 ```
 
-In Python lässt sich eine saubere Komposition nur dann realisieren, wenn eine Referenzbildung zum Kind-Objekt
-außerhalb des Eltern-Objekts verhindert wird. So ist in dem unteren Beispiel das `component`-Attribut der
-`MemController`-Klasse privat und jegliche Funktionsaufrufe werden durchgereicht. Außerdem wird das
-`Component`-Objekt im Konstruktor der `MemController`-Klasse initialisiert.
-
-
+### Beispiel in Python:
 ```python
 class Component:
     __connected: bool
@@ -165,17 +167,18 @@ class MemController:
             self.__component.set_connected(connected)
 ```
 
-## Vererbung
-Durch Vererbung kann das Interface und Verhalten einer Klasse an eine andere weitergegeben werden.
-Hierbei unterscheidet mann zwischen Schnittstellen- und Implementationsvererbungen.
-Die Implementationsvererbung werde ich nun näher beleuchten.
+In diesem Fall wird das `Component`-Objekt im Konstruktor des `MemController`-Objekts instanziiert und ist nur innerhalb des `MemController` verfügbar. Der Lebenszyklus des `Component`-Objekts hängt somit vollständig vom `MemController` ab.
 
-Um eine Implementationsvererbung handelt es sich, wenn eine Klasse von einer anderen vollfunktionsfähigen Klasse
-abgeleitet wird, wobei der abgeleiteten Klasse alle Methoden und Eigenschaften der Basisklasse
-übertragen werden und diese mit der Basisklasse vollständig kompatibel wird.
-Diesen abgeleiteten Klassen können nun Methoden hinzugefügt oder vorhandene Methoden
-ausgetauscht werden. Innerhalb der Basisklasse ist ein Aufruf der ursprünglichen Implementation
-einer ersetzten Methode aber weiterhin möglich.
+## Vererbung
+**Vererbung** ist ein Mechanismus, mit dem eine Klasse Eigenschaften und Methoden einer anderen Klasse erben kann. Dabei
+unterscheidet man zwischen Schnittstellen- und Implementierungsvererbung. Die Implementierungsvererbung wird hier näher
+erläutert.
+
+Die Implementierungsvererbung ermöglicht es einer abgeleiteten Klasse, alle Methoden und Eigenschaften der Basisklasse
+zu übernehmen und bei Bedarf zu erweitern oder zu überschreiben.
+
+Im folgenden Beispiel wird die Klasse `TemperatureComponent` von der Klasse `Component` abgeleitet und erweitert, um
+spezifische Funktionen zur Temperaturmessung hinzuzufügen.
 
 ```mermaid
 classDiagram
@@ -194,10 +197,7 @@ classDiagram
     }
 ```
 
-In diesem Fall wird nun die `Component`-Klasse von der `TemperatureComponent`-Klasse geerbt
-und um die Methoden `get_temperature` und `set_temperature` erweitert.
-Dabei hat die `TemperatureComponent`-Klasse weiterhin die `get_connected` und `set_connected` Methoden.
-
+### Beispiel in Python:
 ```python
 class Component:
     __connected: bool
@@ -212,14 +212,11 @@ class Component:
         self.__connected = connected
 
 
-# Zu erbende Klasse in Klammern hinter Klassenbezeichner
 class TemperatureComponent(Component):
     __temperature: float
 
     def __init__(self) -> None:
-        # __init__ Implementation der Basisklasse
         super().__init__()
-        
         self.__temperature = 0.0
         
     def get_temperature(self) -> float:
@@ -228,3 +225,7 @@ class TemperatureComponent(Component):
     def set_temperature(self, temperature: float) -> None:
         self.__temperature = temperature
 ```
+
+In diesem Beispiel erbt die Klasse `TemperatureComponent` von der Klasse `Component`. Dadurch übernimmt sie die Methoden
+`get_connected` und `set_connected`, und sie fügt die Methoden `get_temperature` und `set_temperature` hinzu, die
+spezifisch für Temperaturmessungen sind.
