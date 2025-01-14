@@ -9,8 +9,8 @@ nav:
   - Aufgaben Klassenbeziehungen Lösungen: klassenbeziehungen-aufgaben-loesung.md
   - Wdh. Klassenbeziehungen: klassenbeziehungen.md
   - Wdh. MVC: mvc.md
-  - Wdh. IT-Sicherheit: it-sicherheit.md
-  - Wdh. Datenschutz: datenschutz.md
+  - IT-Sicherheit: it-sicherheit.md
+  - Datenschutz: datenschutz.md
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
