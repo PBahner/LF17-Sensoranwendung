@@ -78,7 +78,7 @@ class Display(QWidget):
 
     @QtCore.Slot()
     def _on_component_button(self):
-        components = self.__controller.get_components(self.__device)
+        components = self.__controller.get_components()
         print("test")
 
         for sensor in components:
