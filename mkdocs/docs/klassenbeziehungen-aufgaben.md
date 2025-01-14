@@ -128,3 +128,4 @@ Ziel ist es, anhand dieses Szenarios die verschiedenen Beziehungen und die Verer
 Nutzen Sie die Beispiele aus dem Hauptdokument zur Orientierung und versuchen Sie, die Konzepte auf eigene 
 Anwendungsfälle zu übertragen. Dadurch gewinnen Sie praktische Erfahrung in der Anwendung von Assoziation, Aggregation, 
 Komposition und Vererbung, einschließlich der sicheren Verwendung von `super()`.
+ 
