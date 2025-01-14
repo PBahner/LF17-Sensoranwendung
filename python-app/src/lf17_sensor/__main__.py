@@ -1,22 +1,21 @@
 from PySide6.QtWidgets import QApplication
-
-from lf17_sensor.room_heater import RoomHeater
-from main_window import Display
-from main_controller import MemController
-from component import *
+from .main_window import Display
+from .main_controller import MemController
+from .component import *
 
 
 def main() -> None:
     sensor0 = Sensor("Sensor0", True, 25.0)
+    sensor1 = Sensor("Sensor1", True, 21.0)
     actor0 = Actor("Actor0", True, True)
 
-    device = RoomHeater(actor0, sensor0)
+    components = sensor0, sensor1, actor0
 
     app = QApplication()
-    controller = MemController()
-    window = Display(controller, device)
+    controller = MemController(components)
+    window = Display(controller)
 
-    #TODO somehow adjust this to the Table
+    # TODO somehow adjust this to the Table
     window.setFixedSize(400, 400)
 
     window.show()
