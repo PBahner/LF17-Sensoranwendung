@@ -1,7 +1,5 @@
 from PySide6.QtWidgets import QApplication
-from .main_window import Display
-from .main_controller import MemController
-from .component import *
+from lf17_sensor import Sensor, Actor, MemController, Display
 
 
 def main() -> None:
