@@ -58,6 +58,8 @@ class MemController:
 In diesem Fall kann der `MemController` über die Methode `set_component` eine Referenz zu einem `Component`-Objekt
 setzen oder löschen. Die Methode `set_connected` ermöglicht die Steuerung der Verbindung des `Component`-Objekts.
 
+---
+
 ## Aggregation
 Eine **Aggregation** stellt eine "Teil-Ganzes"-Beziehung dar, bei der ein Objekt eine Sammlung von Objekten einer
 anderen Klasse verwaltet. Im Gegensatz zur Komposition existieren die enthaltenen Objekte unabhängig von der
@@ -116,6 +118,8 @@ class MemController:
 
 Hier wird dem `MemController`-Objekt ermöglicht, eine Liste von `Component`-Objekten zu verwalten. Die Methode `set_connected` wird auf jedes `Component`-Objekt angewendet, das dem `MemController` hinzugefügt wurde.
 
+---
+
 ## Komposition
 Eine **Komposition** stellt eine starke "Teil-Ganzes"-Beziehung dar, bei der die Existenz eines Objekts ohne das andere nicht möglich ist. Im Gegensatz zur Aggregation kann das enthaltene Objekt nicht unabhängig existieren.
 
@@ -169,6 +173,8 @@ class MemController:
 
 In diesem Fall wird das `Component`-Objekt im Konstruktor des `MemController`-Objekts instanziiert und ist nur innerhalb des `MemController` verfügbar. Der Lebenszyklus des `Component`-Objekts hängt somit vollständig vom `MemController` ab.
 
+---
+
 ## Vererbung
 **Vererbung** ist ein Mechanismus, mit dem eine Klasse Eigenschaften und Methoden einer anderen Klasse erben kann. Dabei
 unterscheidet man zwischen Schnittstellen- und Implementierungsvererbung. Die Implementierungsvererbung wird hier näher
@@ -216,6 +222,7 @@ class TemperatureComponent(Component):
     __temperature: float
 
     def __init__(self) -> None:
+        # Aufruf des Konstruktors der Basisklasse
         super().__init__()
         self.__temperature = 0.0
         
@@ -229,3 +236,24 @@ class TemperatureComponent(Component):
 In diesem Beispiel erbt die Klasse `TemperatureComponent` von der Klasse `Component`. Dadurch übernimmt sie die Methoden
 `get_connected` und `set_connected`, und sie fügt die Methoden `get_temperature` und `set_temperature` hinzu, die
 spezifisch für Temperaturmessungen sind.
+
+### Erklärung zur `super()`-Methode
+Die Funktion `super()` wird in Python verwendet, um auf die Basisklasse zuzugreifen und deren Methoden (insbesondere den
+Konstruktor) aufzurufen. Dadurch wird sichergestellt, dass alle Eigenschaften und Initialisierungsschritte der Basisklasse korrekt übernommen werden. 
+
+- **Verwendung in Konstruktoren:**  
+  In abgeleiteten Klassen wird `super().__init__()` verwendet, um den Konstruktor der Basisklasse auszuführen. 
+  Dadurch wird garantiert, dass alle benötigten Attribute aus der Basisklasse initialisiert werden, bevor weitere
+  Initialisierungsschritte in der abgeleiteten Klasse stattfinden.
+
+- **Method Resolution Order (MRO):**  
+  Python benutzt eine sogenannte _Method Resolution Order_, um zu bestimmen, in welcher Reihenfolge Basisklassen
+  abgefragt werden, falls eine abgeleitete Klasse mehrfach erbt. `super()` berücksichtigt diese Reihenfolge automatisch
+  und erleichtert somit das Aufrufen von Basisklassenmethoden in Mehrfachvererbungsszenarien.
+
+- **Vermeidung von doppeltem Code:**  
+  Da mit `super()` auf Methoden der Basisklasse zugegriffen werden kann, lässt sich Code-Duplikation vermeiden. Methoden 
+  müssen so nicht erneut implementiert oder explizit mit dem Basisklassennamen aufgerufen werden.
+
+Dieses Prinzip erleichtert die Wartung und Erweiterung von Klassenhierarchien erheblich und stellt sicher, dass sowohl
+die Basisklasse als auch deren abgeleitete Klassen korrekt initialisiert werden.
