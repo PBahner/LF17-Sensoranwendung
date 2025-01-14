@@ -5,8 +5,8 @@ nav:
   - Home: index.md
   - Wdh. Klassenbeziehungen: klassenbeziehungen.md
   - Wdh. MVC: mvc.md
-  - Wdh. IT-Sicherheit: it-sicherheit.md
-  - Wdh. Datenschutz: datenschutz.md
+  - IT-Sicherheit: it-sicherheit.md
+  - Datenschutz: datenschutz.md
   - Aufgaben:
     - Softwareprototyp: aufgabe-2.1.md
     - Abstrakte Klassen: aufgabe-2.3.md
