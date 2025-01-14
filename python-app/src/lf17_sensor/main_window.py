@@ -1,32 +1,51 @@
+import random
+
 from PySide6.QtWidgets import *
 from PySide6 import QtCore
 from PySide6.QtGui import QIcon
 from typing import List
+
+from lf17_sensor.room_heater import RoomHeater
 from main_controller import MemController
 from component import *
 import datetime
 
 
 class Display(QWidget):
-    __actors: List
-    __sensors: List
-    # __main_layout_vertical: QVBoxLayout
-    __test_button: QPushButton
+    __controller: MemController
+    __device: RoomHeater
+    __vertical_layout_main: QVBoxLayout
+    __table: QTableWidget
+    __component_button: QPushButton
+    __exit_button: QPushButton
 
-    def __init__(self, controller: MemController):
+    def __init__(self, controller: MemController, device: RoomHeater):
         super().__init__()
-        self.__test_button = QPushButton("Test me")
+        self.__device = device
+        self.__controller = controller
+        self.__vertical_layout_main = QVBoxLayout()
 
-        vertical_layout = QVBoxLayout()
-        vertical_layout.addWidget(self.generate_table(controller.get_components()))
-        self.setLayout(vertical_layout)
+        self.__component_button = QPushButton("Refresh Components")
+        self.__component_button.clicked.connect(self._on_component_button)
+
+        self.__table = self.generate_table(self.__controller.get_components(device))
+
+        self.__exit_button = QPushButton("Exit")
+        self.__exit_button.clicked.connect(self._on_exit_button)
+
+        self.setWindowTitle("Room Heater")
+
+        self.__vertical_layout_main.addWidget(self.__component_button)
+        self.__vertical_layout_main.addWidget(self.__table)
+        self.__vertical_layout_main.addWidget(self.__exit_button)
+        self.setLayout(self.__vertical_layout_main)
 
 
-    def add_sensor(self, sensor: Sensor):
-        self.__sensors.append(sensor)
+    # def add_sensor(self, sensor: Sensor):
+    #     self.__sensors.append(sensor)
 
-    def add_actor(self, actor: Actor):
-        self.__actors.append(actor)
+    # def add_actor(self, actor: Actor):
+    #     self.__actors.append(actor)
 
     # def get_sensors(self, id):
     #     return self.__sensors
@@ -41,13 +60,13 @@ class Display(QWidget):
         table.setRowCount(len(components))
         table.setColumnCount(3)
 
-        # TODO think about adding connected somewhere
+        # TODO think about adding connection somewhere
         table.setHorizontalHeaderLabels(["Id", "Value", "Last Updated"])
 
+        #TODO fix table height
         for row, component in enumerate(components):
             table.setItem(row, 0, QTableWidgetItem(component.get_id()))
 
-            # Status oder Temperatur je nach Typ
             if isinstance(component, Actor):
                 table.setItem(row, 1, QTableWidgetItem(str(component.get_status())))
             elif isinstance(component, Sensor):
@@ -56,3 +75,31 @@ class Display(QWidget):
             table.resizeColumnToContents(2)
 
         return table
+
+    @QtCore.Slot()
+    def _on_component_button(self):
+        components = self.__controller.get_components(self.__device)
+        print("test")
+
+        for sensor in components:
+            if isinstance(sensor, Sensor):
+
+                change = random.randint(0, 5)
+
+                if random.choice([True, False]):
+                   sensor.set_temperature(sensor.get_temperature() + change)
+                else:
+                   sensor.set_temperature(sensor.get_temperature() - change)
+
+        table = self.generate_table(components)
+        self.__vertical_layout_main.replaceWidget(self.__table, table)
+        self.__table = table
+
+
+
+
+
+    @QtCore.Slot()
+    def _on_exit_button(self) -> None:
+        self.close()
+        return

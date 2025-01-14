@@ -35,3 +35,6 @@ class Sensor(Component):
 
     def get_temperature(self):
         return self.__temperature
+
+    def set_temperature(self, temp):
+        self.__temperature = temp
