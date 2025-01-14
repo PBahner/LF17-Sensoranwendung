@@ -251,6 +251,43 @@ if __name__ == "__main__":
 
 ## 6. Zusammenführung aller Konzepte
 
+```mermaid
+classDiagram
+    class Sensor{
+        -bool __connected
+        +connect()
+        +disconnect()
+        +is_connected() bool
+    }
+    Sensor <|-- TemperatureSensor
+    class TemperatureSensor{
+        -float __temperature
+        +get_temperature() float
+        +set_temperature(float temperature)
+    }
+
+    class SensorManager {
+        -List~Sensor~ __sensors
+        +add_sensor(Sensor sensor)
+        +remove_sensor(Sensor sensor)
+        +get_all_sensors() List~Sensor~
+    }
+    SensorManager o-- Sensor : Aggregation
+
+    class Device {
+        -SensorManager __sensor_manager
+        +get_sensor_manager() SensorManager
+    }
+    Device *-- SensorManager : Komposition
+
+    class User {
+        -Device __device
+        +set_device(Device device)
+        +configure_device()
+    }
+    User --> Device : Assoziation
+```
+
 ```python
 from typing import List, Optional
 
