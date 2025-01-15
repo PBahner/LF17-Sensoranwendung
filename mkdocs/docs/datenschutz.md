@@ -1,22 +1,22 @@
 # Datenschutz
 ## Gegenstand (Was ist damit gemeint)
-- personen bezogene Daten
+- personenbezogene Daten
 - bspw.: Größe, Vorname, Nachname, Geburtsdatum, Augenfarbe, Anschrift, ID, Geschlecht, E-Mail-Adresse, Telefonnummer
 
 ## Rechtsgrundlagen
-- nur durch befugte öffentliche Stelle (Behörde) zulässig, wenn Daten gebraucht werden
-## Videoüberwachung !!! Bezug zur Aufgabe 2.7
+- Verarbeitung nur durch befugte öffentliche Stelle (Behörde) zulässig, wenn Daten gebraucht werden
+
+## Videoüberwachung siehe Aufgabe 2.7
 - nur im Privatgelände erlaubt
-- auf öffentlichem Gelände erlaubt, wenn die Überwachung angekündigt bzw. Ausgeschildert ist
+- auf öffentlichem Gelände erlaubt, wenn die Überwachung angekündigt bzw. ausgeschildert ist
 
 ## Verarbeitungsgrundsätze
 - dürfen nur für nachvollziehbaren Zweck verarbeitet werden
-- Speicherung für die für die Verarbeitung notwendige Dauer beschränkt (nicht ewig --> DsGVO)
+- auf die zur Verarbeitung notwendigen Daten und die notwendige Dauer beschränkt (nicht ewig)
 
 ## Rechte der Betroffenen
-- dürfen datenlöschung beantragen
-- dürfen dateneinforderungen beantragen (welche daten der anbieter über einen selber gespeichert hat)
+- dürfen Datenlöschung beantragen
+- dürfen Dateneinforderungen beantragen (welche Daten der Anbieter über einen selber gespeichert hat)
 
 ## Pflichten der Verantwortlichen
-- müssen datenlöschungen und einforderungen nachgehen
-
+- müssen Datenlöschungen und Einforderungen nachgehen
