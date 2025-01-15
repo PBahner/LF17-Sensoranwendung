@@ -5,8 +5,8 @@ from .component import *
 
 
 def main() -> None:
-    sensor0 = Sensor("Sensor0", True, 25.0)
-    sensor1 = Sensor("Sensor1", True, 21.0)
+    sensor0 = Sensor("Sensor0", True, 25.0, "°C")
+    sensor1 = Sensor("Sensor1", True, 22.0, "°C")
     actor0 = Actor("Actor0", True, True)
 
     components = sensor0, sensor1, actor0

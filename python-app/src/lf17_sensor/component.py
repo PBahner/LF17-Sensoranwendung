@@ -26,15 +26,22 @@ class Actor(Component):
 
 
 class Sensor(Component):
-    __temperature: float
+    __value: float
+    __unit: str
 
-    def __init__(self, component_id: str, connected: bool, temperature: float) -> None:
+    def __init__(self, component_id: str, connected: bool, temperature: float, unit: str) -> None:
         super().__init__(component_id, connected)
+        self.__unit = unit
+        self.__value = temperature
 
-        self.__temperature = temperature
+    def get_value(self) -> float:
+        return self.__value
 
-    def get_temperature(self) -> float:
-        return self.__temperature
+    def set_value(self, temp) -> None:
+        self.__value = temp
 
-    def set_temperature(self, temp):
-        self.__temperature = temp
+    def get_unit(self) -> str:
+        return self.__unit
+
+    def set_unit(self, unit: str) -> None:
+        self.__unit = unit

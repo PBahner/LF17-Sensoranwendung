@@ -63,7 +63,7 @@ class Display(QWidget):
                 table.setItem(row, 1, QTableWidgetItem(str(component.get_status())))
             elif isinstance(component, Sensor):
                 table.setItem(
-                    row, 1, QTableWidgetItem(str(component.get_temperature()))
+                    row, 1, QTableWidgetItem(str(component.get_value()) + component.get_unit())
                 )
             table.setItem(
                 row,
@@ -79,7 +79,6 @@ class Display(QWidget):
     @QtCore.Slot()
     def _on_component_button(self):
         components = self.__controller.get_components()
-        print("test")
 
         for sensor in components:
             if isinstance(sensor, Sensor):
