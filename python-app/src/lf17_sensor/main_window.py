@@ -86,9 +86,9 @@ class Display(QWidget):
                 change = random.randint(0, 5)
 
                 if random.choice([True, False]):
-                   sensor.set_temperature(sensor.get_temperature() + change)
+                   sensor.set_value(sensor.get_value() + change)
                 else:
-                   sensor.set_temperature(sensor.get_temperature() - change)
+                   sensor.set_value(sensor.get_value() - change)
 
         table = self.generate_table(components)
         self.__vertical_layout_main.replaceWidget(self.__table, table)
