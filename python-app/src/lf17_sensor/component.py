@@ -12,6 +12,9 @@ class Component:
     def get_connected(self) -> bool:
         return self.__connected
 
+    def __repr__(self) -> str:
+        return f"{self.__component_id}"
+
 
 class Actor(Component):
     __status: bool
@@ -23,6 +26,9 @@ class Actor(Component):
 
     def get_status(self) -> bool:
         return self.__status
+
+    def __repr__(self) -> str:
+        return f"{self.get_id()} Status: {self.get_status()}"
 
 
 class Sensor(Component):
@@ -37,7 +43,7 @@ class Sensor(Component):
     def get_value(self) -> float:
         return self.__value
 
-    def set_value(self, temp) -> None:
+    def set_value(self, temp: float) -> None:
         self.__value = temp
 
     def get_unit(self) -> str:
@@ -45,3 +51,6 @@ class Sensor(Component):
 
     def set_unit(self, unit: str) -> None:
         self.__unit = unit
+
+    def __repr__(self) -> str:
+        return f"{self.get_id()} Wert: {self.__value}{self.__unit}"

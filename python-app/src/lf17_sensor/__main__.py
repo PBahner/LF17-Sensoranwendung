@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QApplication
 from .main_window import Display
 from .main_controller import MemController
+from .data_storage import DataStoragePrinter, DataStorageFileWriter
 from .component import *
 
 
@@ -12,7 +13,7 @@ def main() -> None:
     components = sensor0, sensor1, actor0
 
     app = QApplication()
-    controller = MemController(components)
+    controller = MemController(components, DataStorageFileWriter())
     window = Display(controller)
 
     # TODO somehow adjust this to the Table

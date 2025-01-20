@@ -55,7 +55,7 @@ class Display(QWidget):
         # TODO think about adding connection somewhere
         table.setHorizontalHeaderLabels(["Id", "Value", "Last Updated"])
 
-        #TODO fix table height
+        # TODO fix table height
         for row, component in enumerate(components):
             table.setItem(row, 0, QTableWidgetItem(component.get_id()))
 
@@ -86,13 +86,15 @@ class Display(QWidget):
                 change = random.randint(0, 5)
 
                 if random.choice([True, False]):
-                   sensor.set_value(sensor.get_value() + change)
+                    sensor.set_value(sensor.get_value() + change)
                 else:
-                   sensor.set_value(sensor.get_value() - change)
+                    sensor.set_value(sensor.get_value() - change)
 
         table = self.generate_table(components)
         self.__vertical_layout_main.replaceWidget(self.__table, table)
         self.__table = table
+
+        self.__controller.write_to_storage()
 
     @QtCore.Slot()
     def _on_exit_button(self) -> None:
