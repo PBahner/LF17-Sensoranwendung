@@ -8,6 +8,8 @@ nav:
   - IT-Sicherheit: it-sicherheit.md
   - Datenschutz: datenschutz.md
   - Aufgaben:
+    - IT-Sicherheit: it-sicherheit-aufgaben.md
+    - Klassendiagram: aufgabe-2.2.md
     - Softwareprototyp: aufgabe-2.1.md
     - Abstrakte Klassen: aufgabe-2.3.md
     - Klassenbeziehungen: klassenbeziehungen-aufgaben.md
