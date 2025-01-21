@@ -264,7 +264,7 @@ Hier erbt `C` sowohl von `A` als auch von `B`.
 
 #### Diamantproblem
 
-Das Diamantproblem (engl. diamond problem) tritt auf, wenn ein Klassen-Vererbungsschema in Form eines „Diamanten“ entsteht.
+Das **Diamantproblem** (engl. diamond problem) tritt auf, wenn ein Klassen-Vererbungsschema in Form eines „Diamanten“ entsteht.
 Ein typisches Beispiel:
 
 ```mermaid
@@ -310,9 +310,12 @@ d.greet()
 ```
 
 In diesem Fall hat Python mehrere mögliche Kandidaten für `greet()`:
-- `B.greet()`
-- `C.greet()`
-- und falls weder in `B` noch in `C` etwas gefunden würde, dann `A.greet()`.
+
+ - `B.greet()`
+
+ - `C.greet()`
+
+ - und falls weder in `B` noch in `C` etwas gefunden würde, dann `A.greet()`.
 
 ### MRO (Method Resolution Order)
 Um Ambiguitäten und Mehrfachaufrufe derselben Methode aus derselben Basisklasse zu vermeiden, folgt Python einer klar 
