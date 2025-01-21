@@ -1,5 +1,7 @@
 # Übungsaufgaben
 
+[Zurück zur Info-Seite](./klassenbeziehungen.md)
+
 Nachfolgend finden Sie verschiedene Übungsaufgaben, die sich auf die Themen **Assoziation**, **Aggregation**, 
 **Komposition** und **Vererbung** (inklusive der Verwendung von `super()`) beziehen.
 
@@ -129,3 +131,5 @@ Nutzen Sie die Beispiele aus dem Hauptdokument zur Orientierung und versuchen Si
 Anwendungsfälle zu übertragen. Dadurch gewinnen Sie praktische Erfahrung in der Anwendung von Assoziation, Aggregation, 
 Komposition und Vererbung, einschließlich der sicheren Verwendung von `super()`.
  
+
+[Zurück zur Info-Seite](./klassenbeziehungen.md)
