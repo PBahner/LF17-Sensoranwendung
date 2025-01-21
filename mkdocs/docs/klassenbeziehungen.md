@@ -237,6 +237,115 @@ In diesem Beispiel erbt die Klasse `TemperatureComponent` von der Klasse `Compon
 `get_connected` und `set_connected`, und sie fügt die Methoden `get_temperature` und `set_temperature` hinzu, die
 spezifisch für Temperaturmessungen sind.
 
+### Mehrfachvererbung
+
+**Mehrfachvererbung** bedeutet, dass eine abgeleitete Klasse mehr als eine direkte Basisklasse hat.
+
+```mermaid
+flowchart BT
+    B --> A
+    C --> A
+    D --> B
+    D --> C
+```
+
+```python
+class A:
+    pass
+
+class B:
+    pass
+
+class C(A, B):
+    pass
+```
+
+Hier erbt `C` sowohl von `A` als auch von `B`.
+
+#### Diamantproblem
+
+Das Diamantproblem (engl. diamond problem) tritt auf, wenn ein Klassen-Vererbungsschema in Form eines „Diamanten“ entsteht.
+Ein typisches Beispiel:
+
+```mermaid
+classDiagram
+    A <|-- B
+    A <|-- C
+    B <|-- D
+    C <|-- D
+    
+    class A {
+        +greet()
+    }
+    
+    class B {
+        +greet()
+    }
+    
+    class C {
+        +greet()
+    }
+```
+
+In Python würde dies wie folgt aussehen.
+
+```python
+class A:
+    def greet(self) -> None:
+        print("Hallo von A")
+
+class B(A):
+    def greet(self) -> None:
+        print("Hallo von B")
+
+class C(A):
+    def greet(self) -> None:
+        print("Hallo von C")
+
+class D(B, C):
+    pass
+
+d = D()
+d.greet()
+```
+
+In diesem Fall hat Python mehrere mögliche Kandidaten für `greet()`:
+- `B.greet()`
+- `C.greet()`
+- und falls weder in `B` noch in `C` etwas gefunden würde, dann `A.greet()`.
+
+### MRO (Method Resolution Order)
+Um Ambiguitäten und Mehrfachaufrufe derselben Methode aus derselben Basisklasse zu vermeiden, folgt Python einer klar 
+definierten Reihenfolge bei der Methodenauflösung. Diese Reihenfolge heißt MRO (Method Resolution Order).
+
+Jede Klasse hat ein Attribut `__mro__`, in dem die Reihenfolge aufgeführt ist:
+
+```python
+>>> D.__mro__
+(<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
+```
+
+Oder man verwendet die Methode `mro()`:
+
+```python
+>>> D.mro()
+[<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]
+```
+
+Die Reihenfolge sagt:  
+1. Suche zuerst in `D` selbst.  
+2. Dann in `B`.  
+3. Dann in `C`.  
+4. Dann in `A`.  
+5. Zum Schluss in `object` (die Wurzel aller Klassen in Python).
+
+Wenn man `d.greet()` ausführt, sucht Python zunächst in `D` nach `greet()`. Falls nicht vorhanden, in `B`, dann in `C`, dann in `A`. Da `B` eine `greet()`-Methode hat, wird diese verwendet:
+
+```python
+d = D()
+d.greet()  # Gibt "Hallo von B" aus
+```
+
 ### Erklärung zur `super()`-Methode
 Die Funktion `super()` wird in Python verwendet, um auf die Basisklasse zuzugreifen und deren Methoden (insbesondere den
 Konstruktor) aufzurufen. Dadurch wird sichergestellt, dass alle Eigenschaften und Initialisierungsschritte der Basisklasse korrekt übernommen werden. 
