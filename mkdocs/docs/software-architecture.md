@@ -35,24 +35,11 @@ flowchart LR
 ```
 
 # MVVM
+Ähnlich wie MVC, aber der Presenter übernimmt die Rolle, die Logik der Benutzeroberfläche zu verwalten, indem er mit dem Model kommuniziert und die View entsprechend aktualisiert.
 
-Das MVVM (Model-View-ViewModel) Muster trennt Präsentation und Geschäftslogik. Das ViewModel spielt eine zentrale Rolle, indem es die View mit dem Model verbindet und für eine reaktionsschnelle Benutzeroberfläche sorgt.
 
-## ViewModel
+# Microservices:
+Microservices teilen eine monolithische Anwendung in kleinere, unabhängige Services auf, die jeweils eine spezifische Funktionalität anbieten. Diese Services kommunizieren über APIs und können unabhängig voneinander skaliert und gewartet werden.
 
-- Abstraktion der View, die Daten für die Anzeige vorbereitet.
-- Bindet Daten aus dem Model und stellt sie der View zur Verfügung.
-- Verwaltet Präsentationslogik und reagiert auf Benutzerinteraktionen.
-
-## Aufgaben des ViewModels
-
-- **Datenbereitstellung:** Formatiert und liefert die Daten für die View.
-- **Datenbindung:** Automatische Aktualisierung der View bei Änderungen im ViewModel.
-- **Präsentationslogik:** Trennung von UI-Logik und Geschäftslogik.
-- **Interaktionen:** Verarbeitet Benutzeraktionen und ändert das Model.
-
-## Funktionsweise
-
-- **Eingabe:** Benutzerinteraktionen werden vom ViewModel verarbeitet.
-- **Verarbeitung:** Das ViewModel kommuniziert mit dem Model und verarbeitet Eingaben.
-- **Ausgabe:** Änderungen im ViewModel aktualisieren automatisch die View.
+# Client-Server-Architektur:
+Diese Architektur trennt die Anwendung in zwei Hauptkomponenten: den Client (der die Anfragen stellt) und den Server (der die Anfragen verarbeitet). Sie wird häufig in Webanwendungen oder Datenbankanwendungen verwendet.
