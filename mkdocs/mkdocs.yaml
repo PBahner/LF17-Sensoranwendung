@@ -4,8 +4,9 @@ theme:
 nav:
   - Home: index.md
   - Wdh. Klassenbeziehungen: klassenbeziehungen.md
-  - Wdh. MVC: software-architecture.md
+  - Software-Architekturmodelle: software-architecture.md
   - IT-Sicherheit: it-sicherheit.md
+  - Anleitung zur Projektierung: projektierung.md
   - Datenschutz: datenschutz.md
   - Aufgaben:
     - IT-Sicherheit: it-sicherheit-aufgaben.md
