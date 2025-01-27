@@ -8,14 +8,42 @@ from .data_getter import DataGetter
 import datetime
 
 
-class Display(QWidget):
-    __vertical_layout_main: QVBoxLayout
-    __table: QTableWidget
-    __component_button: QPushButton
-    __exit_button: QPushButton
-    __controller: MemController
-    __data_getter: DataGetter
+class ComponentTableModel(QtCore.QAbstractTableModel):
+    def __init__(self, components: List[Component], parent=None):
+        super().__init__(parent)
+        self.__components = components
 
+    def rowCount(self, parent=QtCore.QModelIndex()) -> int:
+        return len(self.__components)
+
+    def columnCount(self, parent=QtCore.QModelIndex()) -> int:
+        return 3
+
+    def data(self, index: QtCore.QModelIndex, role: int = QtCore.Qt.DisplayRole):
+        if not index.isValid():
+            return None
+
+        component = self.__components[index.row()]
+
+        if role == QtCore.Qt.DisplayRole:
+            if index.column() == 0:
+                return component.get_id()
+            elif index.column() == 1:
+                if isinstance(component, Actor):
+                    return str(component.get_status())
+                elif isinstance(component, Sensor):
+                    return str(component.get_value()) + component.get_unit()
+            elif index.column() == 2:
+                return str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        return None
+
+    def update_data(self, components: List[Component]):
+        self.beginResetModel()
+        self.__components = components
+        self.endResetModel()
+
+
+class Display(QWidget):
     def __init__(self, controller: MemController, data_getter: DataGetter) -> None:
         super().__init__()
         self.__controller = controller
@@ -26,61 +54,21 @@ class Display(QWidget):
         self.__component_button = QPushButton("Refresh Components")
         self.__component_button.clicked.connect(self._on_component_button)
 
-        self.__table = self.generate_table(self.__controller.get_components())
+        # QTableView statt QTableWidget
+        self.__table_view = QTableView()
+        self.__model = ComponentTableModel(self.__controller.get_components())
+        self.__table_view.setModel(self.__model)
 
         self.__exit_button = QPushButton("Exit")
         self.__exit_button.clicked.connect(self._on_exit_button)
 
         self.setWindowTitle("Room Heater")
         self.__vertical_layout_main.addWidget(self.__component_button)
-        self.__vertical_layout_main.addWidget(self.__table)
+        self.__vertical_layout_main.addWidget(self.__table_view)
         self.__vertical_layout_main.addWidget(self.__exit_button)
         self.setLayout(self.__vertical_layout_main)
 
         self._on_component_button()
-
-
-    # def add_sensor(self, sensor: Sensor) -> None:
-    #     self.__sensors.append(sensor)
-
-    # def add_actor(self, actor: Actor) -> None:
-    #     self.__actors.append(actor)
-
-    # def get_sensors(self, id) -> None:
-    #     return self.__sensors
-
-    # def get_actor(self, id) -> None:
-    #   ...
-    #     return actor.get_status
-
-    def generate_table(self, components: List[Component]) -> QTableWidget:
-        table = QTableWidget()
-        table.setRowCount(len(components))
-        table.setColumnCount(3)
-
-        # TODO think about adding connection somewhere
-        table.setHorizontalHeaderLabels(["Id", "Value", "Last Updated"])
-
-        # TODO fix table height
-        for row, component in enumerate(components):
-            table.setItem(row, 0, QTableWidgetItem(component.get_id()))
-
-            if isinstance(component, Actor):
-                table.setItem(row, 1, QTableWidgetItem(str(component.get_status())))
-            elif isinstance(component, Sensor):
-                table.setItem(
-                    row, 1, QTableWidgetItem(str(component.get_value()) + component.get_unit())
-                )
-            table.setItem(
-                row,
-                2,
-                QTableWidgetItem(
-                    str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                ),
-            )
-            table.resizeColumnToContents(2)
-
-        return table
 
     @QtCore.Slot()
     def _on_component_button(self):
@@ -90,10 +78,7 @@ class Display(QWidget):
             if isinstance(sensor, Sensor):
                 sensor.set_value(self.__data_getter.get_sensor_value())
 
-        table = self.generate_table(components)
-        self.__vertical_layout_main.replaceWidget(self.__table, table)
-        self.__table = table
-
+        self.__model.update_data(components)
         self.__controller.write_to_storage()
 
     @QtCore.Slot()
