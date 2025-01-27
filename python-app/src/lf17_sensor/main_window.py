@@ -4,6 +4,7 @@ from PySide6 import QtCore
 from typing import List
 from .main_controller import MemController
 from .component import *
+from .data_getter import DataGetter
 import datetime
 
 
@@ -12,10 +13,14 @@ class Display(QWidget):
     __table: QTableWidget
     __component_button: QPushButton
     __exit_button: QPushButton
+    __controller: MemController
+    __data_getter: DataGetter
 
-    def __init__(self, controller: MemController) -> None:
+    def __init__(self, controller: MemController, data_getter: DataGetter) -> None:
         super().__init__()
         self.__controller = controller
+        self.__data_getter = data_getter
+
         self.__vertical_layout_main = QVBoxLayout()
 
         self.__component_button = QPushButton("Refresh Components")
@@ -32,6 +37,8 @@ class Display(QWidget):
         self.__vertical_layout_main.addWidget(self.__exit_button)
         self.setLayout(self.__vertical_layout_main)
 
+        self._on_component_button()
+
 
     # def add_sensor(self, sensor: Sensor) -> None:
     #     self.__sensors.append(sensor)
@@ -47,7 +54,6 @@ class Display(QWidget):
     #     return actor.get_status
 
     def generate_table(self, components: List[Component]) -> QTableWidget:
-
         table = QTableWidget()
         table.setRowCount(len(components))
         table.setColumnCount(3)
@@ -82,13 +88,7 @@ class Display(QWidget):
 
         for sensor in components:
             if isinstance(sensor, Sensor):
-
-                change = random.randint(0, 5)
-
-                if random.choice([True, False]):
-                    sensor.set_value(sensor.get_value() + change)
-                else:
-                    sensor.set_value(sensor.get_value() - change)
+                sensor.set_value(self.__data_getter.get_sensor_value())
 
         table = self.generate_table(components)
         self.__vertical_layout_main.replaceWidget(self.__table, table)

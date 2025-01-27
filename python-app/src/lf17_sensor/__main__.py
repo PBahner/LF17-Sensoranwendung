@@ -3,6 +3,7 @@ from .main_window import Display
 from .main_controller import MemController
 from .data_storage import DataStoragePrinter, DataStorageFileWriter
 from .component import *
+from .data_getter import ApiDataGetter
 
 
 def main() -> None:
@@ -14,7 +15,9 @@ def main() -> None:
 
     app = QApplication()
     controller = MemController(components, DataStorageFileWriter())
-    window = Display(controller)
+    data_getter = ApiDataGetter()
+
+    window = Display(controller, data_getter)
 
     # TODO somehow adjust this to the Table
     window.setFixedSize(400, 400)
