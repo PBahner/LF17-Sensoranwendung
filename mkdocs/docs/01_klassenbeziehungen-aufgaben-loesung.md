@@ -1,5 +1,7 @@
 # Musterlösungen mit `main()`-Funktionen
 
+[Zurück zur Info-Seite](./01_klassenbeziehungen.md)
+
 Im Folgenden finden Sie die angepassten Musterlösungen, in denen die Inhalte der bisherigen 
 `if __name__ == "__main__": ...`-Blöcke in eine separate `main()`-Funktion ausgelagert wurden.
 Diese wird am Ende jeweils aus `if __name__ == "__main__": main()` aufgerufen.
@@ -414,3 +416,4 @@ if __name__ == "__main__":
 Die gezeigten Lösungen dienen als Beispiel und können je nach Anforderung oder Projektrichtlinien natürlich 
 angepasst werden. Wichtig ist das **Grundprinzip**, in dem die zuvor autark stehenden Tests im Hauptprogramm 
 nun in eine `main()`-Funktion überführt werden, um saubere Einstiegspunkte zu definieren.
+[Zurück zur Info-Seite](./01_klassenbeziehungen.md)

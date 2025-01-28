@@ -1,6 +1,6 @@
 ## Wiederholung Begriffe zur IT-Sicherheit
 
-[Zu den Aufgaben](./02_it-sicherheit-aufgaben)
+[Zu den Aufgaben](./02_it-sicherheit-aufgaben.md)
 
 ### Funktionssicherheit *safety*
 Ein System ist funktionssicher, wenn es unter normalen Betriebsbedingungen die festgelegte Funktionalität bietet. Ein funktionssicheres System führt keine unzulässigen Funktionen aus.
@@ -32,7 +32,7 @@ Es muss möglich sein, Handlungen eindeutig dem zuzuordnen, der sie ausgeführt 
 Es muss die Echtheit (bzw. Vertrauenswürdigkeit) der Datenverarbeitenden Person/des Systems gewährleistet werden. Autorisierung ist die Überprüfung der Authentizität.
 
 
-[Zu den Aufgaben](./02_it-sicherheit-aufgaben)
+[Zu den Aufgaben](./02_it-sicherheit-aufgaben.md)
 [//]: # (## Roboter-Gesetze)
 
 [//]: # ()
