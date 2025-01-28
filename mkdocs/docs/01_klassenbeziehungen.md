@@ -237,6 +237,73 @@ In diesem Beispiel erbt die Klasse `TemperatureComponent` von der Klasse `Compon
 `get_connected` und `set_connected`, und sie fügt die Methoden `get_temperature` und `set_temperature` hinzu, die
 spezifisch für Temperaturmessungen sind.
 
+### Methodeüberschreibung
+**Methodenüberschreibung (Function Overriding)** bezeichnet das Ersetzen oder Anpassen einer in der Basisklasse
+definierten Methode durch eine neue Implementierung in der abgeleiteten Klasse. Wenn ich jetzt also dafür sorgen will
+das mein Component, wenn es getrennt wird, auch die Temperatur wieder auf 0 setzt, muss ich für meine abgeleitete Klasse
+die Funktionaliät der `set_connected()`-Methode erweitern.
+In vielen Programmiersprachen – darunter
+auch Python – geschieht dies, indem man in der Subklasse eine Methode mit demselben Namen, derselben Parameterliste und
+einem passenden Rückgabetyp (soweit anwendbar) definiert. Der Vorteil davon ist, dass man das bereits existierende
+Verhalten erweitern oder ändern kann, ohne die Basisklasse selbst zu verändern.
+
+Im folgenden Beispiel wird in der Klasse `TemperatureComponent` die Methode `set_connected` aus der Basisklasse überschrieben. Zusätzlich wird bei einer Trennung (False) der Temperaturwert automatisch auf 0 zurückgesetzt:
+
+```python
+class Component:
+    __connected: bool
+    
+    def __init__(self) -> None:
+        self.__connected = False
+    
+    def get_connected(self) -> bool:
+        return self.__connected
+    
+    def set_connected(self, connected: bool) -> None:
+        self.__connected = connected
+
+
+class TemperatureComponent(Component):
+    __temperature: float
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.__temperature = 0.0
+        
+    def get_temperature(self) -> float:
+        return self.__temperature
+    
+    def set_temperature(self, temperature: float) -> None:
+        self.__temperature = temperature
+
+    # Überschreiben (Overriding) der Methode set_connected aus der Basisklasse
+    def set_connected(self, connected: bool) -> None:
+        # Aufruf der Basisklassenmethode (falls das Basisverhalten beibehalten werden soll)
+        super().set_connected(connected)
+        
+        # Zusätzliche Logik in der abgeleiteten Klasse
+        if not connected:
+            # Falls nicht verbunden, setze Temperatur auf 0
+            self.__temperature = 0.0
+```
+
+1. **Basisklasse (`Component`):**  
+   - Enthält eine boolesche Variable `__connected` und Methoden zum Lesen (`get_connected`) und Schreiben
+   (`set_connected`) dieses Zustands.
+
+2. **Abgeleitete Klasse (`TemperatureComponent`):**  
+   - Erbt den Zustand und die Methoden aus der Basisklasse (etwa `get_connected`), fügt eigene Eigenschaften und
+   Methoden für die Temperaturmessung hinzu (`__temperature`, `get_temperature`, `set_temperature`).
+
+   - **Überschreibt** die Methode `set_connected`, um beim Aufruf sowohl das ursprüngliche Verhalten
+   (`super().set_connected(connected)`) auszuführen als auch zusätzliche Schritte (Zurücksetzen der Temperatur) zu
+   implementieren.
+
+Die **Methodenüberschreibung** ermöglicht es somit, die Funktionalität der Basisklasse an die Anforderungen der
+abgeleiteten Klasse anzupassen oder zu erweitern, ohne den Code der Basisklasse selbst ändern zu müssen. Dadurch wird
+eine höhere Flexibilität und Wiederverwendbarkeit erreicht.
+
+
 ### Mehrfachvererbung
 
 **Mehrfachvererbung** bedeutet, dass eine abgeleitete Klasse mehr als eine direkte Basisklasse hat.
