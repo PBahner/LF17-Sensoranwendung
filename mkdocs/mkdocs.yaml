@@ -2,20 +2,20 @@ site_name: LF17 Docs
 theme:
   name: material
 nav:
-  - Home: index.md
-  - Wdh. Klassenbeziehungen: klassenbeziehungen.md
-  - Software-Architekturmodelle: software-architecture.md
-  - IT-Sicherheit: it-sicherheit.md
-  - Anleitung zur Projektierung: projektierung.md
-  - Datenschutz: datenschutz.md
-  - Aufgaben:
-    - IT-Sicherheit: it-sicherheit-aufgaben.md
-    - Datenschutz: datenschutz-aufgaben.md
-    - Klassendiagram: aufgabe-2.2.md
-    - Softwareprototyp: aufgabe-2.1.md
-    - Abstrakte Klassen: aufgabe-2.3.md
-    - Klassenbeziehungen: klassenbeziehungen-aufgaben.md
-    - Klassenbeziehungen Lösungen: klassenbeziehungen-aufgaben-loesung.md
+  - "00: Start": index.md
+  - "01: Wdh. Klassenbeziehungen": 01_klassenbeziehungen.md
+  - "02: IT-Sicherheit": 02_it-sicherheit.md
+  - "03: Datenschutz": 03_datenschutz.md
+  - "04: Software-Architekturmodelle": 04_software-architecture.md
+  - "05: Begriffe zur Projektierung": 05_projektierung.md
+  - "Aufgaben":
+    - "01: Klassenbeziehungen": 01_klassenbeziehungen-aufgaben.md
+    - "01: Klassenbeziehungen Lösungen": 01_klassenbeziehungen-aufgaben-loesung.md
+    - "01: Abstrakte Klassen": 01_aufgabe-2.3.md
+    - "02: IT-Sicherheit": 02_it-sicherheit-aufgaben.md
+    - "03: Datenschutz": 03_datenschutz-aufgaben.md
+    - "04: Softwareprototyp": 04_aufgabe-2.1.md
+    - "05: Klassendiagram": 05_aufgabe-2.2.md
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
