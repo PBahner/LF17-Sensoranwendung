@@ -253,14 +253,17 @@ flowchart BT
 class A:
     pass
 
-class B:
+class B(A):
     pass
 
-class C(A, B):
+class C(A):
+    pass
+
+class D(A, B):
     pass
 ```
 
-Hier erbt `C` sowohl von `A` als auch von `B`.
+Hier erbt `D` sowohl von `B` als auch von `C`.
 
 #### Diamantproblem
 
