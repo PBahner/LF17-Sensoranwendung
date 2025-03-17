@@ -4,18 +4,22 @@ theme:
 nav:
   - "00 -- Start": index.md
   - "01 -- Klassenbeziehungen":
+    - "--> Abituraufgabe": 01_index.md
     - "Wiederholung": 01_wdh.md
     - "Aufgaben": 01_aufgaben.md
     - "Lösungen": 01_lsg.md
   - "02 -- Software-Architekturmodelle":
+    - "--> Abituraufgabe": 02_index.md
     - "Wiederholung": 02_wdh.md
     - "Aufgaben Abstrakte Klassen": 02_aufgaben-ac.md
   - "03 -- IT-Sicherheit":
+    - "--> Abituraufgabe": 03_index.md
     - "Wiederholung Begriffe": 03_wdh-begriffe.md
     - "Wiederholung Datenschutz": 03_wdh-datenschutz.md
     - "Aufgaben": 03_aufgaben-begriffe.md
     - "Aufgaben": 03_aufgaben-datenschutz.md
   - "04 -- Projektierung":
+    - "--> Abituraufgabe": 04_index.md
     - "Begriffe": 04_projektierung.md
     - "Aufgaben": 04_aufgaben.md
 markdown_extensions:
