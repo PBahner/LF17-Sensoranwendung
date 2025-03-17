@@ -1,5 +1,7 @@
 # Anleitung zur Projektierung in der Softwareentwicklung
 
+[Zu den Aufgaben](/04_aufgaben)
+
 ## 1. Risikoanalyse
 - **Identifikation:** Technische, Projektmanagement- und Sicherheitsrisiken.
 - **Bewertung:** Wahrscheinlichkeit und Auswirkungen jedes Risikos.
@@ -28,3 +30,5 @@
 - **Management:** Plane Refactoring und Wartungsmaßnahmen.
 - **Vermeidung:** Setze auf saubere Codepraktiken und regelmäßige Refaktorisierung.
 - **Kommunikation:** Achte darauf, dass alle Stakeholder den Einfluss verstehen.
+
+[Zu den Aufgaben](/04_aufgaben)

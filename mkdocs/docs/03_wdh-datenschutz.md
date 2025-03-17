@@ -1,5 +1,5 @@
 # Datenschutz
-[Zu den Aufgaben](./03_datenschutz-aufgaben.md)
+[Zu den Aufgaben](/03_aufgaben-datenschutz)
 
 ## Gegenstand (Was ist damit gemeint)
 - personenbezogene Daten
@@ -23,4 +23,4 @@
 ## Pflichten der Verantwortlichen
 - müssen Datenlöschungen und Einforderungen nachgehen
 
-[Zu den Aufgaben](./03_datenschutz-aufgaben.md)
+[Zu den Aufgaben](/03_aufgaben-datenschutz)

@@ -1,5 +1,5 @@
 # Klassenbeziehungen
-[Zu den Aufgaben](./01_klassenbeziehungen-aufgaben.md)
+[Zu den Aufgaben](/01_aufgaben)
 ## Assoziation
 Eine **Assoziation** beschreibt eine Verbindung zwischen zwei Objekten unterschiedlicher Klassen. Diese Beziehung
 impliziert keine Ownership, sondern lediglich eine Verknüpfung, die das Interagieren von Objekten ermöglicht.
@@ -440,4 +440,4 @@ Konstruktor) aufzurufen. Dadurch wird sichergestellt, dass alle Eigenschaften un
 Dieses Prinzip erleichtert die Wartung und Erweiterung von Klassenhierarchien erheblich und stellt sicher, dass sowohl
 die Basisklasse als auch deren abgeleitete Klassen korrekt initialisiert werden.
 
-[Zu den Aufgaben](./01_klassenbeziehungen-aufgaben.md)
+[Zu den Aufgaben](/01_aufgaben)

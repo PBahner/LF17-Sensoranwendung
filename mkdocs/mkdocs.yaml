@@ -2,19 +2,22 @@ site_name: LF17 Docs
 theme:
   name: material
 nav:
-  - "00: Start": index.md
-  - "01: Wdh. Klassenbeziehungen": 01_klassenbeziehungen.md
-  - "02: IT-Sicherheit": 02_it-sicherheit.md
-  - "03: Datenschutz": 03_datenschutz.md
-  - "04: Software-Architekturmodelle": 04_software-architecture.md
-  - "05: Begriffe zur Projektierung": 05_projektierung.md
-  - "Aufgaben":
-    - "01: Klassenbeziehungen": 01_klassenbeziehungen-aufgaben.md
-    - "01: Abstrakte Klassen": 01_aufgabe-2.3.md
-    - "02: IT-Sicherheit": 02_it-sicherheit-aufgaben.md
-    - "03: Datenschutz": 03_datenschutz-aufgaben.md
-    - "04: Softwareprototyp": 04_aufgabe-2.1.md
-    - "05: Klassendiagram": 05_aufgabe-2.2.md
+  - "00 -- Start": index.md
+  - "01 -- Klassenbeziehungen":
+    - "Wiederholung": 01_wdh.md
+    - "Aufgaben": 01_aufgaben.md
+    - "Lösungen": 01_lsg.md
+  - "02 -- Software-Architekturmodelle":
+    - "Wiederholung": 02_wdh.md
+    - "Aufgaben Abstrakte Klassen": 02_aufgaben-ac.md
+  - "03 -- IT-Sicherheit":
+    - "Wiederholung Begriffe": 03_wdh-begriffe.md
+    - "Wiederholung Datenschutz": 03_wdh-datenschutz.md
+    - "Aufgaben": 03_aufgaben-begriffe.md
+    - "Aufgaben": 03_aufgaben-datenschutz.md
+  - "04 -- Projektierung":
+    - "Begriffe": 04_projektierung.md
+    - "Aufgaben": 04_aufgaben.md
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
