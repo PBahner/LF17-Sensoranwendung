@@ -44,10 +44,9 @@ class ComponentTableModel(QtCore.QAbstractTableModel):
 
 
 class Display(QWidget):
-    def __init__(self, controller: MemController, data_getter: DataGetter) -> None:
+    def __init__(self, controller: MemController) -> None:
         super().__init__()
         self.__controller = controller
-        self.__data_getter = data_getter
 
         self.__vertical_layout_main = QVBoxLayout()
 
@@ -72,14 +71,8 @@ class Display(QWidget):
 
     @QtCore.Slot()
     def _on_component_button(self):
-        components = self.__controller.get_components()
-
-        for sensor in components:
-            if isinstance(sensor, Sensor):
-                sensor.set_value(self.__data_getter.get_sensor_value())
-
-        self.__model.update_data(components)
-        self.__controller.write_to_storage()
+        self.__controller.update_sensors()
+        self.__model.update_data(self.__controller.get_components())
 
     @QtCore.Slot()
     def _on_exit_button(self) -> None:

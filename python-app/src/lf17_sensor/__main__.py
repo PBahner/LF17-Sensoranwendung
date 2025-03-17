@@ -14,10 +14,9 @@ def main() -> None:
     components = sensor0, sensor1, actor0
 
     app = QApplication()
-    controller = MemController(components, DataStorageFileWriter())
-    data_getter = ApiDataGetter()
+    controller = MemController(components, ApiDataGetter(), DataStorageFileWriter())
 
-    window = Display(controller, data_getter)
+    window = Display(controller)
 
     # TODO somehow adjust this to the Table
     window.setFixedSize(400, 400)
