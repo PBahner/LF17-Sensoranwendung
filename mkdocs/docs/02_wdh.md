@@ -78,4 +78,20 @@ Siehe auch: [Video](https://youtu.be/y8OnoxKotPQ) *(Achtung englisches Video)*
 
 
 ## Client-Server-Architektur:
-Diese Architektur trennt die Anwendung in zwei Hauptkomponenten: den Client (der die Anfragen stellt) und den Server (der die Anfragen verarbeitet). Sie wird häufig in Webanwendungen oder Datenbankanwendungen verwendet.
+
+```mermaid
+graph LR
+    Client[Client] -->|Sendet Anfrage| Server[Server]
+
+    Server -->|Verarbeitet Anfrage| Datenbank[(Datenbank)]
+
+    Datenbank -->|Gibt Daten zurück| Server
+
+    Server -->|Sendet Antwort| Client
+
+    style Client fill:#bbf,stroke:#333,stroke-width:2px
+    style Server fill:#f9f,stroke:#333,stroke-width:2px
+    style Datenbank fill:#bfb,stroke:#333,stroke-width:2px
+```
+
+Diese Architektur trennt die Anwendung in zwei Hauptkomponenten: den Client (der die Anfragen stellt) und den Server (der die Anfragen verarbeitet). Dieses Softwarearchitektur-Modell ist beispielsweise bei Webanwendungen zu finden.
