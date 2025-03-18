@@ -3,7 +3,7 @@ from .main_window import Display
 from .main_controller import MemController
 from .data_storage import DataStoragePrinter, DataStorageFileWriter
 from .component import *
-from .data_getter import ApiDataGetter
+from .data_getter import RandomDataGetter
 
 
 def main() -> None:
@@ -14,7 +14,7 @@ def main() -> None:
     components = sensor0, sensor1, actor0
 
     app = QApplication()
-    controller = MemController(components, ApiDataGetter(), DataStorageFileWriter())
+    controller = MemController(components, RandomDataGetter(), DataStoragePrinter())
 
     window = Display(controller)
 
