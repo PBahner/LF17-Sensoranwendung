@@ -25,6 +25,5 @@ class RandomDataGetter(DataGetter):
 
 # Folgende Klasse soll implementiert werden, um echte Wetterdaten zu erhalten.
 class ApiDataGetter(DataGetter):
-    def get_sensor_value(self) -> float:
-        return requests.get("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m").json()["current"]["temperature_2m"]
+    pass
 
