@@ -8,10 +8,6 @@
 ## Rechtsgrundlagen
 - Verarbeitung nur durch befugte öffentliche Stelle (Behörde) zulässig, wenn Daten gebraucht werden
 
-## Videoüberwachung siehe Aufgabe 2.7
-- nur im Privatgelände erlaubt
-- auf öffentlichem Gelände erlaubt, wenn die Überwachung angekündigt bzw. ausgeschildert ist
-
 ## Verarbeitungsgrundsätze
 - dürfen nur für nachvollziehbaren Zweck verarbeitet werden
 - auf die zur Verarbeitung notwendigen Daten und die notwendige Dauer beschränkt (nicht ewig)

@@ -19,11 +19,14 @@ nav:
     - "Wiederholung Datenschutz": 03_wdh-datenschutz.md
     - "Aufgaben": 03_aufgaben-begriffe.md
     - "Aufgaben": 03_aufgaben-datenschutz.md
+    - "Auswertung Abituraufgabe": 03_index-auswertung.md
   - "04 -- Projektierung":
     - "--> Abituraufgabe": 04_index.md
     - "Begriffe": 04_projektierung.md
     - "Aufgaben": 04_aufgaben.md
 markdown_extensions:
+  - markdown_include.include:
+      base_path: docs
   - admonition
   - pymdownx.details
   - pymdownx.superfences
