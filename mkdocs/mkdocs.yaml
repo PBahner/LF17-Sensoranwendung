@@ -24,6 +24,11 @@ nav:
     - "Begriffe": 04_projektierung.md
     - "Aufgaben": 04_aufgaben.md
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
