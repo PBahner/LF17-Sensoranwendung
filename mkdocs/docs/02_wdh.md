@@ -49,8 +49,32 @@ Das MVVM ist dynamischer aufgrund seines eventbasierten Systems.
 
 
 ## Microservices:
-Microservices teilen eine monolithische Anwendung in kleinere, unabhängige Services auf, die jeweils eine spezifische Funktionalität anbieten. Diese Services kommunizieren über APIs und können unabhängig voneinander skaliert und gewartet werden.
-Siehe auch: [Video](https://youtu.be/y8OnoxKotPQ)
+
+```mermaid
+graph TD
+    Benutzer[Benutzer] -->|Gibt Bestellung auf| Gateway[API-Gateway]
+
+    Gateway --> BenutzerService[Benutzer-Service]
+    Gateway --> ProduktService[Produkt-Service]
+    Gateway --> BestellService[Bestell-Service]
+    Gateway --> ZahlungsService[Zahlungs-Service]
+    Gateway --> BenachrichtigungsService[Benachrichtigungs-Service]
+
+    BenutzerService -->|Auth-Anfrage| AuthDB[(Benutzer-Datenbank)]
+    ProduktService -->|Bestand prüfen| ProduktDB[(Produkt-Datenbank)]
+    BestellService -->|Bestellung speichern| BestellDB[(Bestell-Datenbank)]
+    ZahlungsService -->|Zahlung verarbeiten| ZahlungsGateway[Externes Zahlungs-Gateway]
+
+    BestellService --> BenachrichtigungsService
+
+    BenachrichtigungsService -->|Sende E-Mail/SMS| Benutzer
+
+    style Gateway fill:#f9f,stroke:#333,stroke-width:2px
+```
+
+Microservices ist ein Softwarearchitekturmuster, bei dem eine riesige Anwendung in kleinere, unabhängige Services aufgeteilt wird, die eine spezifische Funktionalität anbieten. Die einzelnen Microservices können untereinander über APIs kommunizieren und werden unabhängig voneinander entwickelt und gewartet.
+
+Siehe auch: [Video](https://youtu.be/y8OnoxKotPQ) *(Achtung englisches Video)*
 
 
 ## Client-Server-Architektur:
