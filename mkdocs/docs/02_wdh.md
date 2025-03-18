@@ -33,8 +33,19 @@ flowchart LR
     View --> |Model| Controller
 ```
 
-## MVVM
-Ähnlich wie MVC, aber der Presenter übernimmt die Rolle, die Logik der Benutzeroberfläche zu verwalten, indem er mit dem Model kommuniziert und die View entsprechend aktualisiert.
+## MVVM - Model-View-ViewModel
+![__MVVM.drawio.svg](images%2F__MVVM.drawio.svg)
+
+Funktioniert ähnlich wie MVC, aber mit einer zusätzlichen Schicht, dem ViewModel. Der Controller ist hier meist durch das ViewModel ersetzt.
+Das MVVM ist dynamischer aufgrund seines eventbasierten Systems.
+
+??? note "Datenbindung // Events"
+
+    Es gibt wesentliche Unterschiede, wie häufig die Daten vom Model an die View übergeben werden:
+
+    | **MVC**                                                          | **MVVM**                                                                                                                  |
+    |------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+    | View muss bei Änderungen des Models manuell aktualisiert werden. | Unterstützt zweiwegige Datenbindung, bei der Änderungen im Modell automatisch in der View angezeigt werden und umgekehrt. |
 
 
 ## Microservices:
