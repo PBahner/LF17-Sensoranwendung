@@ -19,3 +19,8 @@ Die Anwendung ist eine Beispielanwendung, welche auf der oben genannten Prüfung
 - Simulierte Sensordaten (zufälliges Generieren).
 - Einbinden von Wettervorhersage-Daten
 - Einfache Benutzeroberfläche zur Visualisierung der Sensordaten.
+
+## Auswertung
+
+https://forms.gle/EucYbstE1ttcLG8v9
+
