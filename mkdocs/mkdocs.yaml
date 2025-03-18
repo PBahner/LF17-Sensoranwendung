@@ -11,6 +11,7 @@ nav:
   - "02 -- Software-Architekturmodelle":
     - "--> Abituraufgabe": 02_index.md
     - "Wiederholung": 02_wdh.md
+    - "Aufgaben Sensoranwendung": 02_aufgaben-sensor.md
     - "Aufgaben Abstrakte Klassen": 02_aufgaben-ac.md
   - "03 -- IT-Sicherheit":
     - "--> Abituraufgabe": 03_index.md
