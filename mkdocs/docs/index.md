@@ -22,5 +22,5 @@ Die Anwendung ist eine Beispielanwendung, welche auf der oben genannten Prüfung
 
 ## Auswertung
 
-[https://forms.gle/EucYbstE1ttcLG8v9](https://forms.gle/EucYbstE1ttcLG8v9)
+[Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSc893qDXLAIIrT1VFb-D2N4yxboJ4tvGt4LzTO5Fi9HGQNx6w/viewform?usp=dialog)
 
