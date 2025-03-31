@@ -6,11 +6,11 @@ Im Folgenden ist noch einmal das MVC-Muster dargestellt:
 
 ![MVC.drawio.svg](images%2FMVC.drawio.svg)
 
-Das folgende Diagramm zeigt eine Übersich zu allen Klassen der Sensor-Anwendung:
+Das folgende Diagramm zeigt eine Übersicht zu allen Klassen der Sensor-Anwendung:
 
 ![class_overview.svg](images%2Fclass_overview.svg)
 
-## Wie man in Python in Dateien schreibt
+## Dateiarbeit in Python
 In Python gibt es verschiedene Möglichkeiten, mit Dateien zu arbeiten. Zum Schreiben von Daten in eine Datei verwendet man die Funktion open(), die die Datei öffnet, und den Modus w (write) oder a (append). Wenn man den Modus w verwendet, wird die Datei überschrieben, während bei a neue Daten am Ende der Datei angehängt werden. Zum Schreiben von Daten wird die Methode write() verwendet.
 
 Beispiel:
@@ -28,7 +28,7 @@ Die file.write()-Methode schreibt den Text "Hallo, Welt!" in die Datei.
 
 ## Aufgabe
 
-**Erstelle eine neue Implementierung des `DataStorageInterface`!**
+**Erstelle eine neue Implementierung des `DataStorageInterface`.**
 
 Du benötigst folgende Datei: `python-app/src/lf17_sensor/data_storage.py`
 
@@ -37,7 +37,7 @@ Implementiere die Klasse `DataStorageFileWriter`, welche anstelle der `DataStora
 
 
 ## Zusatzaufgabe
-**Erstelle eine neue Implementierung des `DataGetter`!**
+**Erstelle eine neue Implementierung des `DataGetter`.**
 
 Nutze folgende API, um anstelle zufälliger Werte echte Wetterdaten zu erhalten: [Open-Meteo API](https://open-meteo.com/en/docs)
 

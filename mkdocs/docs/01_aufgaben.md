@@ -120,6 +120,7 @@ Ein mögliches Szenario:
 Ziel ist es, anhand dieses Szenarios die verschiedenen Beziehungen und die Vererbung in einer Anwendung zu demonstrieren.
 
 **Hinweise für die Umsetzung:**
+
 1. Skizzieren Sie zunächst ein Klassendiagramm, um die Beziehungen zu verdeutlichen.  
 2. Implementieren Sie die Klassen Schritt für Schritt und testen Sie die Methoden.  
 3. Diskutieren Sie in kleinen Kommentaren im Code, warum es sich bei den Beziehungen um Assoziation, Aggregation oder 

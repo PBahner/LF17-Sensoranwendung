@@ -261,7 +261,7 @@ classDiagram
         +disconnect()
         +is_connected() bool
     }
-    Sensor <|-- TemperatureSensor
+    Sensor <|-- TemperatureSensor : Vererbung
     class TemperatureSensor{
         -float __temperature
         +get_temperature() float

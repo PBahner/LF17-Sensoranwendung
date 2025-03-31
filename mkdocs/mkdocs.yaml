@@ -1,4 +1,5 @@
 site_name: Prüfungsvorbereitung IS-Prüfung
+copyright: © Timo, Klemens, Eric, Leon
 theme:
   name: material
 nav:
@@ -12,14 +13,14 @@ nav:
     - "--> Abituraufgabe": 02_index.md
     - "Wiederholung": 02_wdh.md
     - "Aufgaben Sensoranwendung": 02_aufgaben-sensor.md
-    - "Aufgaben Abstrakte Klassen": 02_aufgaben-ac.md
+    - "Wissensüberprüfung": 02_aufgaben-ac.md
   - "03 -- IT-Sicherheit":
     - "--> Abituraufgabe": 03_index.md
     - "Wiederholung Begriffe": 03_wdh-begriffe.md
     - "Wiederholung Datenschutz": 03_wdh-datenschutz.md
     - "Standards und Gesetze": 03_wdh-grundlagen.md
-    - "Aufgaben": 03_aufgaben-begriffe.md
-    - "Aufgaben": 03_aufgaben-datenschutz.md
+    - "Aufgaben IT-Sicherheit": 03_aufgaben-begriffe.md
+    - "Aufgaben Datenschutz": 03_aufgaben-datenschutz.md
     - "Auswertung Abituraufgabe": 03_index-auswertung.md
   - "04 -- Projektierung":
     - "--> Abituraufgabe": 04_index.md

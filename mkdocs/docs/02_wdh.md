@@ -2,7 +2,7 @@
 Das **MVC** (Model-View-Controller) Muster ist ein Software-Design-Pattern, das in vielen Webanwendungen und Softwarearchitekturen verwendet wird. Der **Controller** ist eine der zentralen Komponenten dieses Musters und spielt eine wichtige Rolle bei der Verarbeitung von Benutzeranfragen und der Steuerung des Programmlaufs.
 
 ### Model
-- Speichert die Anwendungsdaten und den Zustand.
+- speichert die Anwendungsdaten und den Zustand.
 - stellt Datenstruktur der Anwendung dar
 - entspricht einer oder mehreren Klassen
 
@@ -16,11 +16,11 @@ Das **MVC** (Model-View-Controller) Muster ist ein Software-Design-Pattern, das 
 
 
 ### Aufgaben des Controllers:
-- Empfängt Benutzerinteraktionen (z.B. Klicks, Formulareingaben).
-- Verarbeitet Eingaben und entscheidet über die nächste Aktion.
-- Ruft Daten vom Model ab oder verändert diese.
-- Übergibt die Daten an die View zur Darstellung.
-- Kontrolliert den Ablauf der Anwendung und sorgt für die Kommunikation zwischen Model und View.
+- empfängt Benutzerinteraktionen (z.B. Klicks, Formulareingaben).
+- verarbeitet Eingaben und entscheidet über die nächste Aktion.
+- ruft Daten vom Model ab oder verändert diese.
+- übergibt die Daten an die View zur Darstellung.
+- kontrolliert den Ablauf der Anwendung und sorgt für die Kommunikation zwischen Model und View.
 
 ### Funktionsweise:
 1. **Eingabe:** Der Controller empfängt eine Anfrage vom View.
@@ -74,7 +74,7 @@ graph TD
 
 Microservices ist ein Softwarearchitekturmuster, bei dem eine riesige Anwendung in kleinere, unabhängige Services aufgeteilt wird, die eine spezifische Funktionalität anbieten. Die einzelnen Microservices können untereinander über APIs kommunizieren und werden unabhängig voneinander entwickelt und gewartet.
 
-Siehe auch: [Video](https://youtu.be/y8OnoxKotPQ) *(Achtung englisches Video)*
+Siehe auch: [Video](https://youtu.be/y8OnoxKotPQ) *(Achtung englischsprachiges Video)*
 
 
 ## Client-Server-Architektur:

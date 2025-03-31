@@ -1,4 +1,4 @@
-# Abstrakte Klassen
+# abstrakte Klassen
 [Zurück zur Info-Seite](/02_wdh)
 
 Löse folgende Aufgaben zu abstrakten Klassen:

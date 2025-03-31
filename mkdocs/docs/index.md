@@ -1,6 +1,11 @@
 # Schulung zur Prüfungsvorbereitung
 
-Wir begrüßen alle Schüler, Gäste und Lehrer zu unserer Schulung im Fach Informatiksysteme. Diese Schulung wurde in Vorbereitung auf die Abitur- und IHK-Prüfung 2025 durch die Schüler vorbereitet.
+Im Rahmen der dualen Berufsausbildung mit Abitur (DuBas) wurde im Fach Informatiksysteme ein Projekt durchgeführt.
+Das Projekt ist Bestandteil des Lehrplaninhalts LF 17 "Kundenspezifische Anwendungsentwicklung projektorientiert durchführen".
+Das Projekt wurde in Form einer Schulung durch die Schüler vorbereitet und dient ihnen und ihren Mitschülern zur Vorbereitung auf die Abitur- und IHK-Prüfung 2025.
+
+
+Wir begrüßen alle Schüler, Gäste und Lehrer zu unserer Schulung im Fach Informatiksysteme.
 
 
 ## Übersicht
@@ -10,6 +15,25 @@ Diese Schulung behandelt folgende 3 verschiedene Hauptschwerpunkte. Die Schwerpu
 1. **Klassenbeziehungen**
 2. **Softwarearchitekturmodelle**
 3. **IT-Sicherheit und Datenschutz**
+
+
+## Installation / Einrichtung
+
+Die Datei schik.ps1 in einen leeren Ordner kopieren. Rechtsklick auf die Datei und "mit Powershell ausführen".
+
+### Für MkDocs
+
+```bash
+cd mkdocs
+mkdocs serve
+```
+
+### Für die Sensor-Anwendung
+
+In PyCharm oben rechts die Ausführungskonfiguration ("Edit Configurations") bearbeiten und die Einstellung auf "module" und "lf17_sensor" setzen (siehe Screenshot).
+Mit dem grünen Pfeil die Anwendung ausführen.
+
+![screenshot_configuration.png](images%2Fscreenshot_configuration.png)
 
 
 ## Projekt

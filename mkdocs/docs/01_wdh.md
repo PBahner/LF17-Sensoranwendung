@@ -225,11 +225,11 @@ In diesem Beispiel erbt die Klasse `TemperatureComponent` von der Klasse `Compon
 `get_connected` und `set_connected`, und sie fügt die Methoden `get_temperature` und `set_temperature` hinzu, die
 spezifisch für Temperaturmessungen sind.
 
-### Methodeüberschreibung
+### Methodenüberschreibung
 **Methodenüberschreibung (Function Overriding)** bezeichnet das Ersetzen oder Anpassen einer in der Basisklasse
-definierten Methode durch eine neue Implementierung in der abgeleiteten Klasse. Wenn ich jetzt also dafür sorgen will
-das mein Component, wenn es getrennt wird, auch die Temperatur wieder auf 0 setzt, muss ich für meine abgeleitete Klasse
-die Funktionaliät der `set_connected()`-Methode erweitern.
+definierten Methode durch eine neue Implementierung in der abgeleiteten Klasse. Wenn ich jetzt also dafür sorgen will,
+dass mein Component, wenn es getrennt wird, auch die Temperatur wieder auf 0 setzt, muss ich für meine abgeleitete Klasse
+die Funktionalität der `set_connected()`-Methode erweitern.
 In vielen Programmiersprachen – darunter
 auch Python – geschieht dies, indem man in der Subklasse eine Methode mit demselben Namen, derselben Parameterliste und
 einem passenden Rückgabetyp (soweit anwendbar) definiert. Der Vorteil davon ist, dass man das bereits existierende
