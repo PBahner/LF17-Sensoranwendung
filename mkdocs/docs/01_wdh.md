@@ -186,22 +186,10 @@ zu übernehmen und bei Bedarf zu erweitern oder zu überschreiben.
 Im folgenden Beispiel wird die Klasse `TemperatureComponent` von der Klasse `Component` abgeleitet und erweitert, um
 spezifische Funktionen zur Temperaturmessung hinzuzufügen.
 
-```mermaid
-classDiagram
-    Component <|-- TemperatureComponent
-    
-    class Component { 
-        -bool __connected
-        +get_connected() bool
-        +set_connected(bool connected)
-    }
-    
-    class TemperatureComponent {
-        -float __temperature
-        +get_temperature() float
-        +set_temperature(float temperature)
-    }
-```
+![component_class_diagram.svg](images%2Fcomponent_class_diagram.png)
+
+** _alle nachfolgenden Klassendiagramme mit Vererbung haben aufgrund eines Darstellungsfehlers von Mermaid fälschlicherweise einen ausgemalten Pfeil anstelle eines nicht ausgemalten Pfeils bei den Vererbungen._
+
 
 ### Beispiel in Python:
 ```python
